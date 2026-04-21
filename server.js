@@ -24,7 +24,8 @@ app.use('/tx811/*', async (req, res) => {
       }
     });
     const text = await response.text();
-    res.status(response.status).send(text);
+console.log('TICKET DETAIL RESPONSE:', text.substring(0, 500));
+res.status(response.status).send(text);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
